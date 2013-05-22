@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+	<title>Drift Library</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/custom.css">
+	<script type="text/javascript">
+	    var xmlhttp;
+	    function loadXMLDoc(url,cfunc)
+	    {
+	        if(window.XMLHttpRequest)
+	        {
+	            xmlhttp = new XMLHttpRequest();
+	        }
+	        else
+	        {
+	            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	        }
+	        xmlhttp.onreadystatechange= cfunc;
+	        xmlhttp.open("GET", url,true);
+	        xmlhttp.send();
+	    }
+	    function checkEmail(email)
+	    {
+	        var url="/ajax/check/checkEmail?method=checkuser&e="+email;
+	        loadXMLDoc(url,function()
+	                    {
+	                        if(xmlhttp.readyState==4&&xmlhttp.status==200)
+	                        {
+	                            document.getElementById("info_email").innerHTML=xmlhttp.responseText;
+	                        }
+	                    });
+	    }
+    </script>
+</head>
+
+<body>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<nav>
+					<ul class="nav">
+						<li><a id="logo" href="#">Drift Library</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+    
+    <div class="alert alert-success">
+        <p>注册成功！</p>
+    </div>
+
+    <div class="container">
+        <form method="post" class="form-signup" action="registerAction">
+			<h2 class="form-signup-heading">注册</h2>
+                  <label for="user_name">用户名</label>
+                  <input id="user_name" type="text" name="name"/>
+                  
+                  <label for="user_email">邮箱</label>
+                  <input id="user_email" type="text" onkeyup="checkEmail(this.value)" name="email"/>
+			<div class="info">
+				<table>
+					<tbody>
+						<tr id="info_email"></tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<label for="user_password">密码</label>
+                  <input id="user_password" type="password" name="password"/>
+
+                  <label for="user_password_confirmation">密码确认</label>
+                  <input id="user_password_confirmation" type="password" />
+
+                  <input class="btn btn-large btn-primary" type="submit" name="commit" value="提交" />
+		</form>
+    </div>
+
+</body>
+</html>

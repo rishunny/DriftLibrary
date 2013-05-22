@@ -1,0 +1,10 @@
+/tags
+/build/
+/db/
+*.swp
+.svn
+/.classpath
+/.settings
+/.myhibernatedata
+/.project
+
