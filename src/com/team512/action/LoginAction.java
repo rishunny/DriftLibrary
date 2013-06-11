@@ -15,10 +15,8 @@ public class LoginAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		int i = userDAO.loginValidate(this.email, this.password);
-		System.out.println("lo1");
 		//List list = userDAO.findAll();
 		//int i = 0;
-		System.out.println("lo2");
 		if(i==0) return "success";
 		else return "error";
 	}

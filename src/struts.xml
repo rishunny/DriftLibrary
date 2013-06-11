@@ -6,15 +6,12 @@
 	<package name="com.team512.start" extends="struts-default">
 		<action name="loginAction" class="loginAction">
 		<result name="success">/success.jsp</result>
-		<result name="error">/index.html</result>
+		<result name="error">/index.jsp</result>
 		</action>
 		
 		<action name="registerAction" class="registerAction">
-		<result name="success">/index.html</result>
-		<result name="error">/signup.html</result>
+		<result name="success">/index.jsp</result>
+		<result name="error">/signup.jsp</result>
 		</action></package>
 		
-		<package name="com.team512.check" namespace="/ajax/check" extends="struts-default">
-		<action name="checkEmail" class="com.team512.action.EmailCheckAction"></action>
-		</package>
 </struts>    

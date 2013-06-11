@@ -28,11 +28,12 @@ public class LoginFilter implements Filter{
 		HttpServletResponse response = (HttpServletResponse)sresponse;
 		HttpSession session =request.getSession();
 		String url = request.getServletPath();
-		if(url.startsWith(""))url+="/DriftLibrary";
-		if(url.startsWith("/DriftLibrary")&&!url.startsWith("/DirftLibrary/index")){
+		String contextPath=request.getContextPath();
+		//if(url.startsWith(""))url="/";
+		if(!url.startsWith("/index")&&!url.startsWith("/signup")){
 			String name = (String)session.getAttribute("username");
 			if(name==null){
-				response.sendRedirect("/DriftLibrary/index.html");
+				response.sendRedirect(contextPath+"/index.jsp");
 			}
 		}
 		chain.doFilter(srequest,sresponse);
