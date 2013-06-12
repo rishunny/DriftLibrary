@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Drift Library</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript"> 
+        $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
+            //alert(data.title);
+        });
+    </script>
+    
+    <header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<nav>
+					<ul class="nav">
+						<li><a id="logo" href="#">Drift Library</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+    <div class="row-fluid">
+        <div class="span7 offset1">
+            <div class="content_box content">
+                <img src="http:\/\/img3.douban.com\/mpic\/s26014820.jpg" alt="book_image" />
+            </div>
+        </div>
+        <div class="span3">
+            <div class="sidebar">
+                <div class="content_box book_info_box">
+                    <h3 class="mb10">其它信息</h3>
+                    <ul>
+                        <li>ISBN:</li>
+                        <li>出版社:</li>
+                        <li>出版年:</li>
+                        <li>豆瓣链接:</li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+</body>
