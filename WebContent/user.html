@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Drift Library</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript"> 
+        $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
+            document.getElementById("bookBox_cover").src = data.image;
+            document.getElementById("bookBox_info_title").innerHTML = data.title;
+            var str = data.summary; 
+            str = "<p>" +str + "</p>";
+            str = str.replace(/\n/g, "</p>\n<p>");
+            document.getElementById("summary").innerHTML = str; 
+        });
+    </script>
+    
+    <header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<nav>
+					<ul class="nav">
+						<li><a id="logo" href="#">Drift Library</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+    <div class="row-fluid">
+        <div class="span6 offset2">
+            <div class="content_box content">
+                <div class="bookBox">
+                    <img id="bookBox_cover" src="" alt="cover" />
+                    <div class="bookBox_info">
+                        <h3 id="bookBox_info_title"></h3>
+                        <ul id="bookBox_info_info">
+                            <li>副标题:</li>
+                            <li>作者:</li>
+                            <li>出版社:</li>
+                        </ul>
+                    </div>
+                    <div class="bookBox_count">
+                        <span>
+                            <label>0</label>
+                            想借
+                        </span>
+                        <span>
+                            <label>0</label>
+                            当前库存
+                        </span>
+                        <span>
+                            <label>0</label>
+                            总库存
+                        </span>
+                    </div>
+                </div>
+                <div class="book_summary">
+                    <h3 class="mb5">本书简介</h3>
+                    <div id="summary" class="summary"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="span2">
+            <div class="sidebar">
+                <div class="content_box book_info_box">
+                    <h3 class="mb5">其它信息</h3>
+                    <ul>
+                        <li>ISBN:</li>
+                        <li>出版社:</li>
+                        <li>出版年:</li>
+                        <li>豆瓣链接:</li>
+                    </ul>
+                </div> 
+                <div class="content_box">
+                    <h3 class="mb5">标签</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
