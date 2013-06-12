@@ -249,3 +249,12 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-06-12 16:04:45
+declare @a int,@b int
+set @a=1
+set @b=1000
+while @a<40
+begin
+   insert into book (ISBN) values(@b)
+   set @a=@a+1
+   set @b=@b+2
+end
