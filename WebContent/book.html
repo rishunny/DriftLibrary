@@ -12,7 +12,9 @@
 
     <script type="text/javascript"> 
         $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
-            //alert(data.title);
+            document.getElementById("bookBox_cover").src = data.image;
+            document.getElementById("bookBox_info_title").innerHTML = data.title;
+            document.getElementById("summary").innerHTML = data.summary;
         });
     </script>
     
@@ -33,15 +35,43 @@
 	</header>
 
     <div class="row-fluid">
-        <div class="span7 offset1">
+        <div class="span6 offset2">
             <div class="content_box content">
-                <img src="http:\/\/img3.douban.com\/mpic\/s26014820.jpg" alt="book_image" />
+                <div class="bookBox">
+                    <img id="bookBox_cover" src="" alt="cover" />
+                    <div class="bookBox_info">
+                        <h3 id="bookBox_info_title"></h3>
+                        <ul id="bookBox_info_info">
+                            <li>副标题:</li>
+                            <li>作者:</li>
+                            <li>出版社:</li>
+                        </ul>
+                    </div>
+                    <div class="bookBox_count">
+                        <span>
+                            <label>0</label>
+                            想借
+                        </span>
+                        <span>
+                            <label>0</label>
+                            当前库存
+                        </span>
+                        <span>
+                            <label>0</label>
+                            总库存
+                        </span>
+                    </div>
+                </div>
+                <div class="book_summary">
+                    <h3 class="mb5">本书简介</h3>
+                    <div id="summary" class="summary"></div>
+                </div>    
             </div>
         </div>
-        <div class="span3">
+        <div class="span2">
             <div class="sidebar">
                 <div class="content_box book_info_box">
-                    <h3 class="mb10">其它信息</h3>
+                    <h3 class="mb5">其它信息</h3>
                     <ul>
                         <li>ISBN:</li>
                         <li>出版社:</li>
@@ -49,6 +79,9 @@
                         <li>豆瓣链接:</li>
                     </ul>
                 </div> 
+                <div class="content_box">
+                    <h3 class="mb5">标签</h3>
+                </div>
             </div>
         </div>
     </div>
