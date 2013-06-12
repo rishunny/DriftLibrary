@@ -1,12 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=gb2312"%>
 
-</body>
-</html>
+<%@ page language="java"%>
+
+<%@ page import="com.mysql.jdbc.Driver"%>
+
+<%@ page import="java.sql.*"%>
+
+<%
+
+//Çý¶¯³ÌÐòÃû
+
+String driverName="com.mysql.jdbc.Driver";
+
+//Êý¾Ý¿âÓÃ»§Ãû
+
+String userName="root";
+
+//ÃÜÂë
+
+String userPasswd="zsq001";
+
+//Êý¾Ý¿âÃû
+
+String dbName="driftlibrary";
+
+//±íÃû
+
+String tableName="user";
+
+//Áª½á×Ö·û´®
+
+String url="jdbc:mysql://localhost/"+dbName+"?user="+userName+"&password="+userPasswd;
+
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+Connection connection=DriverManager.getConnection(url);
+
+Statement statement = connection.createStatement();
+
+String sql="SELECT * FROM "+tableName;
+
+ResultSet rs = statement.executeQuery(sql); 
+while(rs.next()){
+System.out.println(rs.getString("Email"));
+}
+
+rs.close(); 
+
+statement.close(); 
+
+connection.close(); 
+
+%>

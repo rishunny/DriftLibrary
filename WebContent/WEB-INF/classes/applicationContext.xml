@@ -30,7 +30,8 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/team512/model/User.hbm.xml</value></list>
+				<value>com/team512/model/User.hbm.xml</value>
+				<value>com/team512/model/Book.hbm.xml</value></list>
 		</property></bean>
 	<bean id="UserDAO" class="com.team512.dao.UserDAO">
 		<property name="sessionFactory">
@@ -47,4 +48,18 @@
 	<ref bean="UserDAO"></ref>
 	</property>
 	</bean>
-	</beans>
+	<bean id="PageShowService" class="com.team512.service.PageShowService">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
+	</bean>
+	<bean id="listBook" class="com.team512.action.ListBook">
+	<property name="pageShowService">
+	<ref bean="PageShowService"></ref>
+	</property>
+	</bean>
+	<bean id="BookDAO" class="com.team512.dao.BookDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

@@ -1,3 +1,5 @@
+<%@page import="com.team512.bean.PageBean"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +14,27 @@
   </head>
   
   <body>
-    This is my HTML page. <br>
-    Success!!!!
+   <s:iterator value="pageBean.list">
+   <p>test</p>
+        isbn:<s:property value="getIsbn()"/>
+   </s:iterator>
+        total<s:property value="pageBean.allRow"/>record
+        total<s:property value="pageBean.totalPage"/> page
+        now <s:property value="pageBean.currentPage"/>page<br/>
+        
+        <s:if test="%{pageBean.currentPage == 1}">
+            first preview
+        </s:if>
+        <s:else>
+            <a href="listBook?page=1">first</a>
+            <a href="listBook?page=<s:property value="%{pageBean.currentPage-1}"/>">preview</a>
+        </s:else>
+        <s:if test="%{pageBean.currentPage != pageBean.totalPage}">
+            <a href="listBook?page=<s:property value="%{pageBean.currentPage+1}"/>">next</a>
+            <a href="listBook?page=<s:property value="pageBean.totalPage"/>">last</a>
+        </s:if>
+        <s:else>
+            next last
+        </s:else>
   </body>
 </html>

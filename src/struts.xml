@@ -12,6 +12,11 @@
 		<action name="registerAction" class="registerAction">
 		<result name="success">/index.jsp</result>
 		<result name="error">/signup.jsp</result>
-		</action></package>
+		</action>
+		</package>
 		
-</struts>    
+	<package name="com.team512.list" extends="struts-default">
+		<action name="listBook" class="listBook">
+		<result name="success">/success.jsp</result>
+		</action>
+	</package></struts>    

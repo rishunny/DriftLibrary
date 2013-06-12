@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="com.team512.service.PageShowService"%>
+<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
+<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <html>
 <head>
 	<title>Drift Library</title>
@@ -36,6 +39,10 @@
 					<h2>test</h2>
 					<h2>test</h2>
 					<h2>test</h2>
+					<%-- <%
+					WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+					PageShowService pageShowService = (PageShowService)context.getBean("PageShowService");
+					 %> --%>
 				</div>
 			</div>
 
