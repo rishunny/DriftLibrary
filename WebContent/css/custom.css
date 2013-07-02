@@ -76,6 +76,10 @@ textarea{
     height: 140px;
 }
 
+.banner img{
+    padding-right: 10px;
+}
+
 /*===========header=======*/
 
 .header_search{
@@ -123,9 +127,6 @@ textarea{
     width: 280px;
 }
 
-.banner img{
-    padding-right: 13px;
-}
 
 .img_logo{
     width: 350px;
@@ -286,3 +287,27 @@ textarea{
     padding: 10px 20px 30px;
 }
 
+/*=====search=====*/
+
+.search_results{
+    /*height: 120px;*/
+}
+
+.search_results ul li img.img_cover{
+    width: 65px;
+    height: 95px;
+    float:left;
+    padding-right: 10px;
+}
+
+.search_results ul li a.book_name{
+    font-size: 14px;
+}
+
+.search_results ul li p{
+    color: #A5A5A5;
+    margin-bottom: 10px;
+}
+
+.search_results ul li div.book_info{
+}    
