@@ -62,4 +62,10 @@
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-	</bean></beans>
+	</bean>
+	<bean id="query" class="com.team512.action.SearchAction">
+	<property name="pageShowService">
+	<ref bean="PageShowService"></ref>
+	</property>
+	</bean>
+	</beans>

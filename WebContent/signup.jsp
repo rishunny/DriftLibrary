@@ -40,7 +40,19 @@
 	</header>
     
     <div class="alert alert-success">
-        <p>注册成功</p>
+    <%
+    String re = request.getParameter("flag");
+    System.out.println("re is:"+re);
+    if(re!=null)
+    {
+     if(re.equals("1"))
+    {
+    %>
+    <p>注册成功</p>
+    <%
+    }
+    }
+     %>        
     </div>
 
     <div class="container">
@@ -65,7 +77,7 @@
                   <label for="user_password_confirmation">确认密码</label>
                   <input id="user_password_confirmation" type="password" name="user_password_confirmation" />
 
-                  <input class="btn btn-large btn-primary" type="submit" name="commit" value="提交" />
+                  <input class="btn btn-large btn-primary" type="button" name="commit" value="提交" />
 		</form>
     </div>
 

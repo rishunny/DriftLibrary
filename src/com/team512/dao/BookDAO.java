@@ -131,10 +131,10 @@ public class BookDAO extends HibernateDaoSupport {
 		return findByProperty(BORROWED, borrowed);
 	}
 
-	public List findAll() {
+	public List findAll(String hql) {
 		log.debug("finding all Book instances");
 		try {
-			String queryString = "from Book";
+			String queryString = hql;
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);

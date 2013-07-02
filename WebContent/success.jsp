@@ -14,6 +14,10 @@
   </head>
   
   <body>
+  <%
+  StringBuffer str=request.getRequestURL();
+  System.out.println(str);
+   %>
    <s:iterator value="pageBean.list">
    <p>test</p>
         isbn:<s:property value="getIsbn()"/>

@@ -27,7 +27,10 @@
 			</div>
 		</div>
 	</header>
-
+  <%
+  String str=request.getParameter("flag");
+  System.out.println(str);
+   %>
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span6 offset1">

@@ -11,7 +11,6 @@ public class RegisterAction extends ActionSupport{
 	private String user_password;
 	private UserDAO userDAO;
 
-
 	public String getUser_name() {
 		return user_name;
 	}
