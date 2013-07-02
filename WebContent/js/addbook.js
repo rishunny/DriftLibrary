@@ -11,6 +11,8 @@ $(document).ready(function(){
             var image_str = data.image;
             var authorIntro_str = data.author_intro;
             var summary_str = data.summary;
+            summary_str = "<p>" +summary_str + "</p>";
+            summary_str = summary_str.replace(/\n/g, "</p>\n<p>");
             var publisher_str = data.publisher;
             var pubdate_str = data.pubdate;;
             var isbn_str=isbn_input;
