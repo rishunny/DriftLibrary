@@ -120,6 +120,11 @@ textarea{
     padding-right: 15px;
 }
 
+.img_logo{
+    width: 350px;
+    float: left; 
+}
+
 /*=========bookinfo=========*/
 
 .bookBox {
@@ -205,6 +210,11 @@ textarea{
 
 .summary p{
     text-indent: 2em;
+}
+
+.book_tags{
+    font-size: 12px;
+    padding-right: 10px;
 }
 
 /*=======user_info=======*/
