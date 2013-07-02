@@ -129,8 +129,25 @@ textarea{
 
 
 .img_logo{
-    width: 350px;
+    width: 300px;
     float: left; 
+    padding-right: 10px;
+}
+
+.index_about{
+    color: #484847;
+}
+
+.index_about h1{
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.index_about p{
+    font-family: "Hiragino Sans GB";
+    font-size: 14px;
+    padding-bottom: 4px;
 }
 
 /*=========bookinfo=========*/
