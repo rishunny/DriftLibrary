@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+    <script src="js/unslider.min.js"></script>
 </head>
 <body>
 
@@ -37,6 +38,7 @@
             }); */
             
         });
+
     </script>
     
     <header class="navbar navbar-fixed-top navbar-inverse">
@@ -55,41 +57,90 @@
 		</div>
 	</header>
 
-    <div class="row-fluid">
-        <div class="span6 offset2">
-            <div class="content">
-                <p>我的书架</p>
-            </div>
-        </div>
-
-        <div class="span2">
-            <div class="content box_user">
-                <img class="user_photo" src="http://www.gravatar.com/avatar/f056d7298d8076c2c5283c078a9ad4a9?s=45" alt="" />
-                <p class="user_name pd10" >tzwm</p>
-                <br />
-                <a class="pd10" href="#">设置</a>
-                <br />
-                
-                <div class="userBox_count">
-                    <span>
-                        <label id="count_donate">0</label>
-                        捐赠
-                    </span>
-                    <span>
-                        <label id="count_borrow">0</label>
-                        借入
-                    </span>
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <div class="content content_nav">
+                    <div class="content_navbar">
+                        <a class="content_navbar_tab content_navbar_tab_current" href="#">我的书架</a>
+                        <a class="content_navbar_tab" href="#">想借</a>
+                        <a class="content_navbar_tab" href="#">已借</a>
+                        <a class="content_navbar_tab" href="#">可借</a>
+                    </div>
+                    <div>
+                        <div class="book_list">
+                            <h3 class="floatleft">我想借的</h3>
+                            <a href="#" class="unslider-arrow next button button-flat-primary button-tiny floatright"> >> </a>
+                            <a href="#" class="unslider-arrow prev button button-flat-primary button-tiny floatright"> << </a>
+                            <div class="banner">
+                                <ul>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                        <div class="book_list">
+                            <h3>我已借的</h3>
+                        </div> 
+                        <div class="book_list">
+                            <h3>我可借的</h3>
+                        </div> 
+                    </div>
                 </div>
             </div>
-
-            <div class="content">
-                <h3>捐书</h3>
-                <form action="#">
-                    <input type="text" style="width:auto;" id="isbn_input" placeholder="ISBN" name="isbn_input" />
-                    <input class="btn" type="submit" name="donate" value="捐出"/>
-                </form>
+    
+            <div class="span4">
+                <div class="content box_user">
+                    <img class="user_photo" src="http://www.gravatar.com/avatar/f056d7298d8076c2c5283c078a9ad4a9?s=45" alt="" />
+                    <p class="user_name pd10" >tzwm</p>
+                    <br />
+                    <a class="pd10" href="#">设置</a>
+                    <br />
+                    
+                    <div class="userBox_count">
+                        <span>
+                            <label id="count_donate">0</label>
+                            捐赠
+                        </span>
+                        <span>
+                            <label id="count_borrow">0</label>
+                            借入
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="content">
+                    <h3>捐书</h3>
+                    <form class="form-inline" action="#">
+                        <input type="text" style="width:180px;" id="isbn_input" placeholder="ISBN" name="isbn_input" />
+                        <input class="button glow button-rounded button-flat-primary button-small" type="submit" name="donate" value="捐出"/>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        var unslider = $('.banner').unslider();
+
+        $('.unslider-arrow').click(function() {
+            var fn = this.className.split(' ')[1];
+
+            //  Either do unslider.data('unslider').next() or .prev() depending on the className
+            unslider.data('unslider')[fn]();
+        });
+    </script>
 
 </body>
