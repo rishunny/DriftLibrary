@@ -14,6 +14,11 @@
         $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
             document.getElementById("bookBox_cover").src = data.image;
             document.getElementById("bookBox_info_title").innerHTML = data.title;
+            var tags=data.tags;
+            var s;
+            for(var i = 0;i<tags.length;i++){
+            alert(tags[i].title);
+            }
             var str = data.summary; 
             str = "<p>" +str + "</p>";
             str = str.replace(/\n/g, "</p>\n<p>");
