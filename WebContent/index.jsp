@@ -11,13 +11,16 @@
 <body>
     <%@include file="header.jsp"%>
 
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span6 offset1">
-				<div class="content content_primary">
-                    <h3>About</h3>
+	<div class="container">
+		<div class="row">
+			<div class="span8">
+				<div style="height:300px;" class="content">
+                    <img class="img_logo" src="img/logo.png" alt="logo" />
+                    <div>
+                        <h1>Drift Library</h1>  
+                    </div>
 				</div>
-                <div class="content content_primary">
+                <div class="content">
                     <h3 style="float:left;">随机推荐</h3>
                     <a style="float:right;" href="#" class="unslider-arrow next button button-flat-primary button-tiny"> >> </a>
                     <a style="float:right;" href="#" class="unslider-arrow prev button button-flat-primary button-tiny"> << </a>

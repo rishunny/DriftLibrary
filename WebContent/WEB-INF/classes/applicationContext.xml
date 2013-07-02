@@ -86,4 +86,6 @@
 	<ref bean="BookDAO"></ref>
 	</property>
 	</bean>
+	<bean id="user" class="com.team512.action.UserAction">
+	</bean>
 	</beans>
