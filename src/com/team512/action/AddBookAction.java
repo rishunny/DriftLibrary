@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.team512.dao.BookDAO;
 import com.team512.model.Book;
+import com.team512.model.Tags;
 
 public class AddBookAction extends ActionSupport{
 	private String title;
@@ -94,20 +95,11 @@ public class AddBookAction extends ActionSupport{
 		this.isbn = isbn;
 	}
 	public void addBook(){
-		JSONArray array = JSONArray.fromObject(tag);
-		System.out.println("test2");
-		int size = array.size();
-		for(int i = 0;i<size;i++){
-			JSONObject object = array.getJSONObject(i);
-			String name = object.getString("name");
-			System.out.println(name);
-		}
+		
 		//String userId_str=(String)(ActionContext.getContext().getSession().get("user_id")); 
 		//int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
 		int userId = 1;
-		System.out.println("a1");
 		Book book = new Book();
-		System.out.println("a2");
 		book.setTitle(title);
 		book.setSubtitle(subtitle);
 		book.setAuthor(author);
@@ -120,8 +112,16 @@ public class AddBookAction extends ActionSupport{
 		book.setStatus(1);
 		book.setUserId(userId);
 		int bookId = bookDAO.saveBook(book);
-		System.out.println("add book bookid:"+bookId);
-		System.out.println("test3");
+		JSONArray array = JSONArray.fromObject(tag);
+		int size = array.size();
+		for(int i = 0;i<size;i++){
+			JSONObject object = array.getJSONObject(i);
+			String name = object.getString("name");
+			Tags tags = new Tags();
+			tags.setBookId(bookId);
+			tags.setTag(name);
+			bookDAO.saveTags(tags);
+		}
 	}
 	@Override
 	public String execute() throws Exception {

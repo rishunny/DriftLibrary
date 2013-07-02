@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.team512.model.Book;
+import com.team512.model.Tags;
 
 /**
  * A data access object (DAO) providing persistence and search support for Book
@@ -67,13 +68,23 @@ public class BookDAO extends HibernateDaoSupport {
 		try {
 			getHibernateTemplate().save(transientInstance);
 			i = transientInstance.getBookId();
-			System.out.println("bookis :"+i);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
 			throw re;
 		}
 		return i;
+	}
+	public void saveTags(Tags tags){
+		log.debug("saving Book instance");
+		try {
+			getHibernateTemplate().save(tags);
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			System.out.println(re);
+			throw re;
+		}
 	}
 	public void save(Book transientInstance) {
 		log.debug("saving Book instance");
