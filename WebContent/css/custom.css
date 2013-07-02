@@ -42,6 +42,13 @@ textarea{
     padding-left: 10px;
 }
 
+.floatleft{
+    float: left;
+}
+
+.floatright{
+    float: right;
+}
 .content{
     background: #ffffff;
     margin: 0 auto 20px;
@@ -117,7 +124,7 @@ textarea{
 }
 
 .banner img{
-    padding-right: 15px;
+    padding-right: 13px;
 }
 
 .img_logo{
@@ -217,7 +224,7 @@ textarea{
     padding-right: 10px;
 }
 
-/*=======user_info=======*/
+/*=======user=======*/
 
 .box_user {
     width: auto;
@@ -252,4 +259,30 @@ textarea{
     margin-top: 3px;
 }
 
+.content_nav{
+    padding:0px;
+}
+
+.content_navbar{
+    padding: 10px 15px 10px 0;
+    border-bottom: 1px solid #DCDCDC;
+    background: #F6F5F3;
+
+}
+
+.content_navbar_tab{
+    border-right: 1px solid #DCDCDC;
+    padding:10px 15px;
+    font-size: 14px;
+    color: #8D8D8D;
+}
+
+.content_navbar_tab_current{
+    padding-bottom: 15px;
+    background: #FFFFFF;
+}
+
+.book_list{
+    padding: 10px 20px 30px;
+}
 
