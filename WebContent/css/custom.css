@@ -54,6 +54,7 @@ textarea{
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
     box-shadow: 0 1px 2px rgba(0,0,0,.05);
 
+    min-width: 170px;
 }
 
 .content h3 {
@@ -122,18 +123,22 @@ textarea{
 }
 
 .bookBox_info {
-    width: 450px;
-    padding-bottom: 10px;
-    padding-right: 40px;
-    margin-bottom: 16px;
-    position: relative;
-    z-index: 10;
-    float: right;
+    /*width: 450px;*/
+    /*padding-bottom: 10px;*/
+    /*padding-right: 40px;*/
+    /*margin-bottom: 16px;*/
+    /*position: relative;*/
+    /*z-index: 10;*/
+    /*float: right;*/
+    float:left;
+    position: absolute;
+    top:10px;
+    left:140px;
 }
 
 .bookBox_info h3 {
     color: #227CA2;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     width: 260px;
@@ -169,6 +174,13 @@ textarea{
     margin-top: 3px;
 }
 
+.book_activity{
+    float:left;
+    position: absolute;
+    top: 120px;
+    left: 140px;
+}
+
 .book_summary{
     margin-top:20px; 
     padding:0 15px; 
@@ -195,4 +207,28 @@ textarea{
 .user_name{
     float: left;
 }
+
+.userBox_count {
+    margin-top: 10px;
+    margin-left: -6px;
+}
+
+.userBox_count span {
+    border-left: 1px solid #E0E0E0;
+    float: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    position: relative;
+    width: 50px;
+    text-align: center;
+    color: #666;
+}
+
+.userBox_count span label {
+    color: #4C4C4C;
+    /*display: inline-block;*/
+    font-size: 20px;
+    margin-top: 3px;
+}
+
 
