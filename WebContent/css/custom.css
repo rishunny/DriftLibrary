@@ -57,12 +57,21 @@ textarea{
     min-width: 170px;
 }
 
+.content_primary{
+    min-width: 600px;
+}
+
 .content h3 {
     font-size: 14px;
     font-weight: bold;
     margin-top:-10px;
 }
 
+
+.img_cover{
+    width: 100px;
+    height: 140px;
+}
 
 /*===========header=======*/
 
@@ -109,6 +118,10 @@ textarea{
 .form-signup input[type="text"],
 .form-signup input[type="password"]{
     width: 280px;
+}
+
+.banner img{
+    padding-right: 18px;
 }
 
 /*=========bookinfo=========*/
