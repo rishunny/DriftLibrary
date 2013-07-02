@@ -14,15 +14,27 @@
         $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
             document.getElementById("bookBox_cover").src = data.image;
             document.getElementById("bookBox_info_title").innerHTML = data.title;
-            var tags=data.tags;
-            var s;
-            for(var i = 0;i<tags.length;i++){
-            alert(tags[i].title);
-            }
             var str = data.summary; 
             str = "<p>" +str + "</p>";
             str = str.replace(/\n/g, "</p>\n<p>");
             document.getElementById("summary").innerHTML = str; 
+            var tags=data.tags;
+            var tags_str=JSON.stringify(tags);
+            var title_str = data.title;
+            var subtitle_str = data.subtitle;
+            var author_str = data.author[0];
+            var image_str = data.image;
+            var authorIntro_str = data.author_intro;
+            var summary_str = data.summary;
+            var publisher_str = data.publisher;
+            var pubdate_str = data.pubdate;
+            var isbn_str="111";
+            $.post("addBook",{tag:tags_str,title:title_str,subtitle:subtitle_str,author:author_str,image:image_str,authorIntro:authorIntro_str,summary:summary_str
+            ,publisher:publisher_str,pubdate:pubdate_str,isbn:isbn_str},function(result){
+            });
+            /* $.post("addBook",{tag:tags_str},function(result){
+            }); */
+            
         });
     </script>
     

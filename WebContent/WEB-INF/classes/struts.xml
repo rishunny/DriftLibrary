@@ -38,4 +38,7 @@
 		<action name="query" class='query'>
 		<result name="success">/success2.jsp</result>
 		</action>
+		<action name="addBook" class="addBook">
+		<result name="success">/success.jsp</result>
+		</action>
 	</package></struts>    

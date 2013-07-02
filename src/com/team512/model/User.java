@@ -8,7 +8,7 @@ public class User implements java.io.Serializable {
 
 	// Fields
 
-	private Integer personId;
+	private Integer userId;
 	private String name;
 	private String email;
 	private String passWord;
@@ -41,12 +41,12 @@ public class User implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getPersonId() {
-		return this.personId;
+	public Integer getUserId() {
+		return this.userId;
 	}
 
-	public void setPersonId(Integer personId) {
-		this.personId = personId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getName() {

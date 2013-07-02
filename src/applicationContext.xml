@@ -70,4 +70,9 @@
 	</bean>
 	<bean id="randAction" class="com.team512.action.RandomAction">
 	</bean>
+	<bean id="addBook" class="com.team512.action.AddBookAction">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
+	</bean>
 	</beans>
