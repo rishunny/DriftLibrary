@@ -76,7 +76,7 @@ textarea{
     height: 140px;
 }
 
-.banner img{
+.banner img, .banner1 img, .banner2 img, .banner3 img{
     padding-right: 10px;
 }
 
@@ -301,7 +301,48 @@ textarea{
 }
 
 .book_list{
-    padding: 10px 20px 30px;
+    padding: 20px;
+}
+
+
+.book_list2 li{
+    border-bottom: 1px solid #BFC0C1;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    height: 60px;
+    width: 550px;
+}
+
+.book_list2 a{
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+}
+
+.book_list2 li img{
+    float: left;
+    width: 36px;
+    height: 50px;
+    padding-right: 15px;
+}
+
+.book_inventory{
+    font: #000000;
+    font-size: 12px;
+    position: relative;
+    top: 20px;
+    left: 150px;
+}
+
+.book_want{
+    position: relative;
+    top: 20px;
+    left: 180px;
+    
 }
 
 /*=====search=====*/
