@@ -8,10 +8,12 @@ import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.hql.ast.HqlASTFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.team512.model.Book;
 import com.team512.model.Tags;
 
@@ -85,6 +87,20 @@ public class BookDAO extends HibernateDaoSupport {
 			System.out.println(re);
 			throw re;
 		}
+	}
+	public int checkISBN(String isbn,int userId){
+		try {
+			String hql = "from Book as B where B.userId="+userId+" and B.isbn=?";
+			List list = getHibernateTemplate().find(hql,new String[]{isbn});
+			if(list.size()>0){
+				return 1;
+			}
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+		return 0;
 	}
 	public void save(Book transientInstance) {
 		log.debug("saving Book instance");
