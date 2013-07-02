@@ -2,9 +2,12 @@
 <html>
 <head>
 	<title>Drift Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/buttons.css" >
 	<link rel="stylesheet" href="css/custom.css">
 </head>
+
 <body>
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -16,10 +19,14 @@
 					<ul class="nav">
 						<li><a id="logo" href="#">Drift Library</a></li>
 					</ul>
-					<ul class="nav pull-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
+
+                    <form class="form-search header_search" action="#">
+                        <div class="input-append">
+                            <input class="span2 search-query" type="text" placeholder="你想要的图书" />
+                            <button class="btn">搜索</button>
+                        </div>
+                    </form>
+
 				</nav>
 			</div>
 		</div>
@@ -43,7 +50,7 @@
 					<label class="checkbox">
                         <input type="checkbox" value="remember-me">记住我</input>
 					</label>
-					<button class="btn btn-large btn-primary" type="submit">登录</button>
+					<button class="button glow button-rounded button-flat-primary" type="submit">登录</button>
 				</form>
 			</div>
 		</div>

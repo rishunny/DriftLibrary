@@ -66,10 +66,11 @@ textarea{
 
 /*===========header=======*/
 
-.navbar-text .pull-right {
-    float: none;
+.header_search{
+    float: right;
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 110px;
+    padding-top: 5px;
 }
 
 #logo {
@@ -82,6 +83,7 @@ textarea{
     padding-top: 9px;
     font-weight: bold;
     line-height: 1;
+    padding-left: 110px;
 }
 
 /*============index========*/

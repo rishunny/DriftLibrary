@@ -4,30 +4,11 @@
 <%@page import="org.springframework.web.context.WebApplicationContext"%>
 
 <html>
-<head>
-	<title>Drift Library</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 
-	<header class="navbar navbar-fixed-top navbar-inverse">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<nav>
-					<ul class="nav">
-						<li><a id="logo" href="#">Drift Library</a></li>
-					</ul>
-					<ul class="nav pull-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
+<@include file="head.jsp">
+
+<body>
+    <@include file="header.jsp">
 
 	<div class="container-fluid">
 		<div class="row-fluid">

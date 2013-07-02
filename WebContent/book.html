@@ -11,7 +11,7 @@
 <body>
 
     <script type="text/javascript"> 
-        $.getJSON('https://api.douban.com/v2/book/2567698?callback=?', function(data) {
+        $.getJSON('https://api.douban.com/v2/book/2567698?apikey=05fda08443dc365f11f8e18ccb94a31d&callback=?', function(data) {
             document.getElementById("bookBox_cover").src = data.image;
             document.getElementById("bookBox_info_title").innerHTML = data.title;
             var str = data.summary; 
@@ -21,17 +21,21 @@
         });
     </script>
     
-    <header class="navbar navbar-fixed-top navbar-inverse">
+	<header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<nav>
 					<ul class="nav">
 						<li><a id="logo" href="#">Drift Library</a></li>
 					</ul>
-					<ul class="nav pull-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
+
+                    <form class="form-search header_search" action="#">
+                        <div class="input-append">
+                            <input class="span2 search-query" type="text" placeholder="你想要的图书" />
+                            <button class="btn">搜索</button>
+                        </div>
+                    </form>
+
 				</nav>
 			</div>
 		</div>
