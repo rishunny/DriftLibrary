@@ -20,6 +20,7 @@ public class Book implements java.io.Serializable {
 	private String pubdate;
 	private Integer status;
 	private String isbn;
+	private String url;
 
 	// Constructors
 
@@ -30,7 +31,7 @@ public class Book implements java.io.Serializable {
 	/** full constructor */
 	public Book(Integer userId, String title, String subtitle, String author,
 			String image, String authorIntro, String summary, String publisher,
-			String pubdate, Integer status, String isbn) {
+			String pubdate, Integer status, String isbn, String url) {
 		this.userId = userId;
 		this.title = title;
 		this.subtitle = subtitle;
@@ -42,6 +43,7 @@ public class Book implements java.io.Serializable {
 		this.pubdate = pubdate;
 		this.status = status;
 		this.isbn = isbn;
+		this.url = url;
 	}
 
 	// Property accessors
@@ -140,6 +142,14 @@ public class Book implements java.io.Serializable {
 
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

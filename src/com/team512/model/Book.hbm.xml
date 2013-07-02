@@ -43,5 +43,8 @@
         <property name="isbn" type="java.lang.String">
             <column name="ISBN" length="45" />
         </property>
+        <property name="url" type="java.lang.String">
+            <column name="Url" length="45" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,7 @@
 package com.team512.action;
 
+import org.apache.struts2.ServletActionContext;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -21,6 +23,13 @@ public class AddBookAction extends ActionSupport{
 	private Integer status;
 	private String isbn;
 	private String tag;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	private BookDAO bookDAO;
 	public BookDAO getBookDAO() {
 		return bookDAO;
@@ -98,6 +107,7 @@ public class AddBookAction extends ActionSupport{
 		
 		//String userId_str=(String)(ActionContext.getContext().getSession().get("user_id")); 
 		//int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
+		System.out.println("begin");
 		int userId = 1;
 		Book book = new Book();
 		book.setTitle(title);
@@ -111,6 +121,9 @@ public class AddBookAction extends ActionSupport{
 		book.setIsbn(isbn);
 		book.setStatus(1);
 		book.setUserId(userId);
+		System.out.println("test ");
+		System.out.println("alt is "+url);
+		book.setUrl(url);
 		int bookId = bookDAO.saveBook(book);
 		JSONArray array = JSONArray.fromObject(tag);
 		int size = array.size();
@@ -126,8 +139,16 @@ public class AddBookAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+		//int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
+		int userId = 1;
+		int i = bookDAO.checkISBN(isbn, userId);
+		if(i==1){
+			ServletActionContext.getResponse().getWriter().write("repeat");
+			return null;
+		}
 		addBook();
-		return super.execute();
+		ServletActionContext.getResponse().getWriter().write("success");
+		return null;
 	}
 
 }
