@@ -30,7 +30,7 @@ public class SearchAction extends ActionSupport{
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("begin");
-		String hql = "from Book";
+		String hql = "from Book where ";
 		this.pageBean = pageShowService.queryForSearchPage(hql, 5, page);
 		return "success";
 	}

@@ -68,4 +68,6 @@
 	<ref bean="PageShowService"></ref>
 	</property>
 	</bean>
+	<bean id="randAction" class="com.team512.action.RandomAction">
+	</bean>
 	</beans>

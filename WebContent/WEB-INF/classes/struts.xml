@@ -21,6 +21,14 @@
 		</result>
 		<result name="error">/signup.jsp</result>
 		</action>
+		
+		<action name="randAction" class="randAction">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
 		</package>
 		
 	<package name="com.team512.list" extends="struts-default">

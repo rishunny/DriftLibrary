@@ -25,10 +25,19 @@
     <servlet-name>Validate</servlet-name>
     <servlet-class>com.team512.action.Validate</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>RandValidate</servlet-name>
+    <servlet-class>com.team512.action.RandValidate</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>Validate</servlet-name>
     <url-pattern>/validate.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RandValidate</servlet-name>
+    <url-pattern>/randValidate.do</url-pattern>
   </servlet-mapping>
   
   

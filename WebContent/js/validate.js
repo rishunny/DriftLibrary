@@ -22,6 +22,14 @@ $().ready(function(){
 					url:"validate.do",
 					data:{email:function(){return $("#user_email").val();}}
 				}
+			},
+			rand:{
+				required:true,
+				remote:{
+					type:"GET",
+					url:"randValidate.do",
+					data:{code:function(){return $("#rand").val();}}
+				}
 			}
 		},
 		messages: {
@@ -40,6 +48,9 @@ $().ready(function(){
 			},
 			user_email:{
 				remote:jQuery.format("The email has been registered!")
+			},
+			rand:{
+				remote:jQuery.format("Vertification Code Error")
 			}
 		}
 	});

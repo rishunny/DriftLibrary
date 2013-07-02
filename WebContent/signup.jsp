@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,16 @@
 	color:red;
 	}
 	</style>
+	<script>
+	
+		function changeValidateCode(obj) {
+			//获取当前的时间作为参数，无具体意义 
+			var timenow = new Date().getTime();
+			//每次请求需要一个不同的参数，否则可能会返回同样的验证码 
+			//这和浏览器的缓存机制有关系，也可以把页面设置为不缓存，这样就不用这个参数了。 
+			obj.src = "randAction?d=" + timenow;
+		}
+	</script>
 </head>
 
 <body>
@@ -39,7 +50,7 @@
 		</div>
 	</header>
     
-    <div class="alert alert-success">
+    
     <%
     String re = request.getParameter("flag");
     System.out.println("re is:"+re);
@@ -48,12 +59,14 @@
      if(re.equals("1"))
     {
     %>
+    <div class="alert alert-success">
     <p>注册成功</p>
+    </div>
     <%
     }
     }
      %>        
-    </div>
+    
 
     <div class="container">
         <form method="post" class="form-signup" id="form-signup" action="registerAction">
@@ -76,8 +89,11 @@
 
                   <label for="user_password_confirmation">确认密码</label>
                   <input id="user_password_confirmation" type="password" name="user_password_confirmation" />
-
-                  <input class="btn btn-large btn-primary" type="button" name="commit" value="提交" />
+                  
+                   <s:text name="random"></s:text>：<s:textfield name="rand" id="rand" size="5"></s:textfield>
+            	   <img src="randAction" onclick="changeValidateCode(this)" title="点击图片刷新验证码"/>
+                  <input class="btn btn-large btn-primary" type="submit" name="commit" value="提交" />
+           
 		</form>
     </div>
 
