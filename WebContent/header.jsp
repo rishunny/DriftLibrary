@@ -1,4 +1,6 @@
-	<header class="navbar navbar-fixed-top navbar-inverse">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<nav>

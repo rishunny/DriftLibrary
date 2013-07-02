@@ -14,8 +14,9 @@ $(document).ready(function(){
             var publisher_str = data.publisher;
             var pubdate_str = data.pubdate;;
             var isbn_str=isbn_input;
+            var url_str=data.alt;
             $.post("addBook",{tag:tags_str,title:title_str,subtitle:subtitle_str,author:author_str,image:image_str,authorIntro:authorIntro_str,summary:summary_str
-            ,publisher:publisher_str,pubdate:pubdate_str,isbn:isbn_str},function(result){
+            ,publisher:publisher_str,pubdate:pubdate_str,isbn:isbn_str,url:url_str},function(result){
             	if(result=="success"){
             		location.reload();
             	}

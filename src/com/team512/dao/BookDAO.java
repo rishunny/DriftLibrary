@@ -2,6 +2,9 @@ package com.team512.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.xml.soap.Detail;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.HibernateException;
@@ -101,6 +104,16 @@ public class BookDAO extends HibernateDaoSupport {
 			throw re;
 		}
 		return 0;
+	}
+	public List<Book> detail(int bookId){
+		try {
+			String hql = "from Book as B where B.bookId="+bookId;
+			List<Book> list = getHibernateTemplate().find(hql);
+			return list;
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
 	}
 	public void save(Book transientInstance) {
 		log.debug("saving Book instance");

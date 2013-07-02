@@ -23,6 +23,13 @@ public class AddBookAction extends ActionSupport{
 	private Integer status;
 	private String isbn;
 	private String tag;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	private BookDAO bookDAO;
 	public BookDAO getBookDAO() {
 		return bookDAO;
@@ -114,6 +121,9 @@ public class AddBookAction extends ActionSupport{
 		book.setIsbn(isbn);
 		book.setStatus(1);
 		book.setUserId(userId);
+		System.out.println("test ");
+		System.out.println("alt is "+url);
+		book.setUrl(url);
 		int bookId = bookDAO.saveBook(book);
 		JSONArray array = JSONArray.fromObject(tag);
 		int size = array.size();

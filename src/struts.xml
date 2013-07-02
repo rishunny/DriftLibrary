@@ -40,4 +40,7 @@
 		</action>
 		<action name="addBook" class="addBook">
 		</action>
+		<action name="bookDetail" class="bookDetail">
+		<result name="success">/book.jsp</result>
+		</action>
 	</package></struts>    

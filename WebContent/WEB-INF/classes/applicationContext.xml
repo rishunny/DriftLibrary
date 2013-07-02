@@ -76,4 +76,9 @@
 	<ref bean="BookDAO"></ref>
 	</property>
 	</bean>
+	<bean id="bookDetail" class="com.team512.action.BookDetail">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
+	</bean>
 	</beans>
