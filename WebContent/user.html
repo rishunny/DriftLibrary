@@ -55,39 +55,41 @@
 		</div>
 	</header>
 
-    <div class="row-fluid">
-        <div class="span6 offset2">
-            <div class="content">
-                <p>我的书架</p>
-            </div>
-        </div>
-
-        <div class="span2">
-            <div class="content box_user">
-                <img class="user_photo" src="http://www.gravatar.com/avatar/f056d7298d8076c2c5283c078a9ad4a9?s=45" alt="" />
-                <p class="user_name pd10" >tzwm</p>
-                <br />
-                <a class="pd10" href="#">设置</a>
-                <br />
-                
-                <div class="userBox_count">
-                    <span>
-                        <label id="count_donate">0</label>
-                        捐赠
-                    </span>
-                    <span>
-                        <label id="count_borrow">0</label>
-                        借入
-                    </span>
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <div class="content">
+                    <p>我的书架</p>
                 </div>
             </div>
-
-            <div class="content">
-                <h3>捐书</h3>
-                <form action="#">
-                    <input type="text" style="width:auto;" id="isbn_input" placeholder="ISBN" name="isbn_input" />
-                    <input class="btn" type="submit" name="donate" value="捐出"/>
-                </form>
+    
+            <div class="span4">
+                <div class="content box_user">
+                    <img class="user_photo" src="http://www.gravatar.com/avatar/f056d7298d8076c2c5283c078a9ad4a9?s=45" alt="" />
+                    <p class="user_name pd10" >tzwm</p>
+                    <br />
+                    <a class="pd10" href="#">设置</a>
+                    <br />
+                    
+                    <div class="userBox_count">
+                        <span>
+                            <label id="count_donate">0</label>
+                            捐赠
+                        </span>
+                        <span>
+                            <label id="count_borrow">0</label>
+                            借入
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="content">
+                    <h3>捐书</h3>
+                    <form class="form-inline" action="#">
+                        <input type="text" style="width:180px;" id="isbn_input" placeholder="ISBN" name="isbn_input" />
+                        <input class="button glow button-rounded button-flat-primary button-small" type="submit" name="donate" value="捐出"/>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
