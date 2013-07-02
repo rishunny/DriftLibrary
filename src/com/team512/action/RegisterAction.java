@@ -54,9 +54,6 @@ public class RegisterAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(this.user_name);
-		System.out.println(this.user_email);
-		System.out.println(this.user_password);
 		User user = new User();
 		user.setAddress("test");
 		user.setAuthority(0);

@@ -6,21 +6,42 @@
 -->
 <hibernate-mapping>
     <class name="com.team512.model.Book" table="book" catalog="driftlibrary">
-        <id name="docId" type="java.lang.Integer">
-            <column name="DocId" />
+        <id name="bookId" type="java.lang.Integer">
+            <column name="BookId" />
             <generator class="identity" />
         </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="UserId" />
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="Title" length="100" />
+        </property>
+        <property name="subtitle" type="java.lang.String">
+            <column name="Subtitle" length="100" />
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="Author" length="100" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="Image" length="100" />
+        </property>
+        <property name="authorIntro" type="java.lang.String">
+            <column name="Author_intro" length="65535" />
+        </property>
+        <property name="summary" type="java.lang.String">
+            <column name="Summary" length="65535" />
+        </property>
+        <property name="publisher" type="java.lang.String">
+            <column name="Publisher" length="100" />
+        </property>
+        <property name="pubdate" type="java.lang.String">
+            <column name="Pubdate" length="45" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
         <property name="isbn" type="java.lang.String">
-            <column name="ISBN" length="250" not-null="true" />
-        </property>
-        <property name="authorId" type="java.lang.Integer">
-            <column name="AuthorId" not-null="true" />
-        </property>
-        <property name="count" type="java.lang.Integer">
-            <column name="Count" />
-        </property>
-        <property name="borrowed" type="java.lang.Integer">
-            <column name="Borrowed" />
+            <column name="ISBN" length="45" />
         </property>
     </class>
 </hibernate-mapping>

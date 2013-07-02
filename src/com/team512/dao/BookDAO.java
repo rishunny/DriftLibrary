@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.team512.model.Book;
+import com.team512.model.Tags;
 
 /**
  * A data access object (DAO) providing persistence and search support for Book
@@ -28,15 +29,21 @@ import com.team512.model.Book;
 public class BookDAO extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(BookDAO.class);
 	// property constants
+	public static final String USER_ID = "userId";
+	public static final String TITLE = "title";
+	public static final String SUBTITLE = "subtitle";
+	public static final String AUTHOR = "author";
+	public static final String IMAGE = "image";
+	public static final String AUTHOR_INTRO = "authorIntro";
+	public static final String SUMMARY = "summary";
+	public static final String PUBLISHER = "publisher";
+	public static final String PUBDATE = "pubdate";
+	public static final String STATUS = "status";
 	public static final String ISBN = "isbn";
-	public static final String AUTHOR_ID = "authorId";
-	public static final String COUNT = "count";
-	public static final String BORROWED = "borrowed";
 
 	protected void initDao() {
 		// do nothing
 	}
-	
 	public List<Book> queryForPage(final String hql,final int offset, final int length) {
 		// TODO Auto-generated method stub
 		List list = getHibernateTemplate().executeFind(new HibernateCallback(){
@@ -54,6 +61,30 @@ public class BookDAO extends HibernateDaoSupport {
 	public int getAllRowCount(String hql) {
 		// TODO Auto-generated method stub
 		 return getHibernateTemplate().find(hql).size();
+	}
+	public int saveBook(Book transientInstance){
+		int i = 0;
+		log.debug("saving Book instance");
+		try {
+			getHibernateTemplate().save(transientInstance);
+			i = transientInstance.getBookId();
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+		return i;
+	}
+	public void saveTags(Tags tags){
+		log.debug("saving Book instance");
+		try {
+			getHibernateTemplate().save(tags);
+			log.debug("save successful");
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			System.out.println(re);
+			throw re;
+		}
 	}
 	public void save(Book transientInstance) {
 		log.debug("saving Book instance");
@@ -115,26 +146,53 @@ public class BookDAO extends HibernateDaoSupport {
 		}
 	}
 
+	public List findByUserId(Object userId) {
+		return findByProperty(USER_ID, userId);
+	}
+
+	public List findByTitle(Object title) {
+		return findByProperty(TITLE, title);
+	}
+
+	public List findBySubtitle(Object subtitle) {
+		return findByProperty(SUBTITLE, subtitle);
+	}
+
+	public List findByAuthor(Object author) {
+		return findByProperty(AUTHOR, author);
+	}
+
+	public List findByImage(Object image) {
+		return findByProperty(IMAGE, image);
+	}
+
+	public List findByAuthorIntro(Object authorIntro) {
+		return findByProperty(AUTHOR_INTRO, authorIntro);
+	}
+
+	public List findBySummary(Object summary) {
+		return findByProperty(SUMMARY, summary);
+	}
+
+	public List findByPublisher(Object publisher) {
+		return findByProperty(PUBLISHER, publisher);
+	}
+
+	public List findByPubdate(Object pubdate) {
+		return findByProperty(PUBDATE, pubdate);
+	}
+
+	public List findByStatus(Object status) {
+		return findByProperty(STATUS, status);
+	}
+
 	public List findByIsbn(Object isbn) {
 		return findByProperty(ISBN, isbn);
 	}
 
-	public List findByAuthorId(Object authorId) {
-		return findByProperty(AUTHOR_ID, authorId);
-	}
-
-	public List findByCount(Object count) {
-		return findByProperty(COUNT, count);
-	}
-
-	public List findByBorrowed(Object borrowed) {
-		return findByProperty(BORROWED, borrowed);
-	}
-
-	public List findAll(String hql) {
+	public List findAll(String queryString) {
 		log.debug("finding all Book instances");
 		try {
-			String queryString = hql;
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);

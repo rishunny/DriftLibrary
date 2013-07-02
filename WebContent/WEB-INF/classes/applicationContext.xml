@@ -31,7 +31,8 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/team512/model/User.hbm.xml</value>
-				<value>com/team512/model/Book.hbm.xml</value></list>
+				<value>com/team512/model/Book.hbm.xml</value>
+				<value>com/team512/model/Tags.hbm.xml</value></list>
 		</property></bean>
 	<bean id="UserDAO" class="com.team512.dao.UserDAO">
 		<property name="sessionFactory">
@@ -69,5 +70,10 @@
 	</property>
 	</bean>
 	<bean id="randAction" class="com.team512.action.RandomAction">
+	</bean>
+	<bean id="addBook" class="com.team512.action.AddBookAction">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
 	</bean>
 	</beans>

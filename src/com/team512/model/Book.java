@@ -8,11 +8,18 @@ public class Book implements java.io.Serializable {
 
 	// Fields
 
-	private Integer docId;
+	private Integer bookId;
+	private Integer userId;
+	private String title;
+	private String subtitle;
+	private String author;
+	private String image;
+	private String authorIntro;
+	private String summary;
+	private String publisher;
+	private String pubdate;
+	private Integer status;
 	private String isbn;
-	private Integer authorId;
-	private Integer count;
-	private Integer borrowed;
 
 	// Constructors
 
@@ -20,28 +27,111 @@ public class Book implements java.io.Serializable {
 	public Book() {
 	}
 
-	/** minimal constructor */
-	public Book(String isbn, Integer authorId) {
-		this.isbn = isbn;
-		this.authorId = authorId;
-	}
-
 	/** full constructor */
-	public Book(String isbn, Integer authorId, Integer count, Integer borrowed) {
+	public Book(Integer userId, String title, String subtitle, String author,
+			String image, String authorIntro, String summary, String publisher,
+			String pubdate, Integer status, String isbn) {
+		this.userId = userId;
+		this.title = title;
+		this.subtitle = subtitle;
+		this.author = author;
+		this.image = image;
+		this.authorIntro = authorIntro;
+		this.summary = summary;
+		this.publisher = publisher;
+		this.pubdate = pubdate;
+		this.status = status;
 		this.isbn = isbn;
-		this.authorId = authorId;
-		this.count = count;
-		this.borrowed = borrowed;
 	}
 
 	// Property accessors
 
-	public Integer getDocId() {
-		return this.docId;
+	public Integer getBookId() {
+		return this.bookId;
 	}
 
-	public void setDocId(Integer docId) {
-		this.docId = docId;
+	public void setBookId(Integer bookId) {
+		this.bookId = bookId;
+	}
+
+	public Integer getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSubtitle() {
+		return this.subtitle;
+	}
+
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+	public String getAuthor() {
+		return this.author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getAuthorIntro() {
+		return this.authorIntro;
+	}
+
+	public void setAuthorIntro(String authorIntro) {
+		this.authorIntro = authorIntro;
+	}
+
+	public String getSummary() {
+		return this.summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public String getPublisher() {
+		return this.publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getPubdate() {
+		return this.pubdate;
+	}
+
+	public void setPubdate(String pubdate) {
+		this.pubdate = pubdate;
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	public String getIsbn() {
@@ -50,30 +140,6 @@ public class Book implements java.io.Serializable {
 
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
-	}
-
-	public Integer getAuthorId() {
-		return this.authorId;
-	}
-
-	public void setAuthorId(Integer authorId) {
-		this.authorId = authorId;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getBorrowed() {
-		return this.borrowed;
-	}
-
-	public void setBorrowed(Integer borrowed) {
-		this.borrowed = borrowed;
 	}
 
 }

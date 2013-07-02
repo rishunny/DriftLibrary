@@ -6,8 +6,8 @@
 -->
 <hibernate-mapping>
     <class name="com.team512.model.User" table="user" catalog="driftlibrary">
-        <id name="personId" type="java.lang.Integer">
-            <column name="PersonId" />
+        <id name="userId" type="java.lang.Integer">
+            <column name="UserId" />
             <generator class="identity" />
         </id>
         <property name="name" type="java.lang.String">
