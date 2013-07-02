@@ -81,4 +81,11 @@
 	<ref bean="BookDAO"></ref>
 	</property>
 	</bean>
+	<bean id="randomBook" class="com.team512.action.RandomBook">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
+	</bean>
+	<bean id="user" class="com.team512.action.UserAction">
+	</bean>
 	</beans>

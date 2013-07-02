@@ -57,6 +57,7 @@ public class BookDAO extends HibernateDaoSupport {
                 query.setFirstResult(offset);
                 query.setMaxResults(length);
                 List<Book> list =query.list();
+                System.out.println("in size "+list.size());
                 return list;
             }
         });
@@ -73,10 +74,42 @@ public class BookDAO extends HibernateDaoSupport {
 		try {
 			getHibernateTemplate().save(transientInstance);
 			i = transientInstance.getBookId();
+//			int t = (Integer)getHibernateTemplate().find("select max(p.bookId) from Book as p").listIterator().next();
+//			System.out.println("max id is "+t);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
 			throw re;
+		}
+		return i;
+	}
+	public int maxId(){
+		int i =0;
+		try {
+			String hql = "select max(p.bookId) from Book as p";
+			i = (Integer)getHibernateTemplate().find(hql).listIterator().next();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return i;
+	}
+	public int countId(){
+		int i =0;
+		try {
+			String hql = "select count(*) from Book";
+			i = (Integer)getHibernateTemplate().find(hql).listIterator().next();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return i;
+	}
+	public int minId(){
+		int i =0;
+		try {
+			String hql = "select min(p.bookId) from Book as p";
+			i = (Integer)getHibernateTemplate().find(hql).listIterator().next();
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		return i;
 	}
