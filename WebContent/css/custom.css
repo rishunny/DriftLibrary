@@ -57,6 +57,10 @@ textarea{
     min-width: 170px;
 }
 
+.content_primary{
+    min-width: 600px;
+}
+
 .content h3 {
     font-size: 14px;
     font-weight: bold;
@@ -64,12 +68,18 @@ textarea{
 }
 
 
+.img_cover{
+    width: 100px;
+    height: 140px;
+}
+
 /*===========header=======*/
 
-.navbar-text .pull-right {
-    float: none;
+.header_search{
+    float: right;
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 110px;
+    padding-top: 5px;
 }
 
 #logo {
@@ -82,6 +92,7 @@ textarea{
     padding-top: 9px;
     font-weight: bold;
     line-height: 1;
+    padding-left: 110px;
 }
 
 /*============index========*/
@@ -107,6 +118,10 @@ textarea{
 .form-signup input[type="text"],
 .form-signup input[type="password"]{
     width: 280px;
+}
+
+.banner img{
+    padding-right: 18px;
 }
 
 /*=========bookinfo=========*/

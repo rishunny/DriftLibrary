@@ -5,12 +5,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <@include file="head">
 
-        <title>Drift Library</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-        <link rel="stylesheet" href="css/custom.css">
-        <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/additional-methods.js"></script>
         <script type="text/javascript" src="js/validate.js"></script>
@@ -35,22 +31,7 @@
         <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
         <script src="js/bootstrap.min.js"></script>
 
-        <header class="navbar navbar-fixed-top navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <nav>
-                <ul class="nav">
-                    <li><a id="logo" href="#">Drift Library</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-                </nav>
-            </div>
-        </div>
-        </header>
-
+        <@include file="header.jsp">
 
         <%
         String re = request.getParameter("flag");
