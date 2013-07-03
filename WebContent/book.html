@@ -20,7 +20,8 @@
             str = str.replace(/\n/g, "</p>\n<p>");
             document.getElementById("summary").innerHTML = str; 
         });
-    </script>
+
+   </script>
     
 	<header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
@@ -72,8 +73,8 @@
                         </div>
     
                         <div class="book_activity">
-                            <button class="button glow button-rounded button-flat-primary">想借</button>
-                            <button class="button glow button-rounded button-flat-primary">捐赠</button>
+                            <button id="wishBtn" class="button glow button-rounded button-flat-primary">想借</button>
+                            <button id="donateBtn" class="button glow button-rounded button-flat-primary">捐赠</button>
                         </div>
     
                     </div>
@@ -113,4 +114,20 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        wishBtn = document.getElementById("wishBtn");
+        donateBtn = document.getElementById("donateBtn");
+
+        function pressWish(){
+            btn = document.getElementById("wishBtn");
+            btn.className = "button button-rounded button-flat"; 
+        }
+
+        function pressDonate(){
+            btn = document.getElementById("donateBtn");
+            btn.className = "button button-rounded button-flat"; 
+        }
+        wishBtn.addEventListener("click", pressWish);
+        donateBtn.addEventListener("click", pressDonate);
+    </script>
 </body>
