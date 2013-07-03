@@ -367,5 +367,10 @@ textarea{
     margin-bottom: 10px;
 }
 
+.search_results ul li{
+	padding-bottom: 10px;	
+}
+
+
 .search_results ul li div.book_info{
 }    

@@ -9,4 +9,5 @@
     <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/unslider.min.js"></script>
+	<script src="js/addbook.js"></script>
 </head>

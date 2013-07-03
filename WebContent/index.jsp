@@ -17,14 +17,23 @@
 			<div class="span8">
 				<div style="height:300px;" class="content">
                     <img class="img_logo" src="img/logo.png" alt="logo" />
-                    <div>
-                        <h1>Drift Library</h1>  
+                    <div class="index_about">
+                        <h1>Drift Library</h1>
+                         <p>
+                            这是一个没有固定居所的“漂流图书馆”。
+                        </p>
+                        <p>
+                            所有图书来源于会员捐赠，也寄存于会员处。
+                        </p>
+                        <p>
+                            会员可以免费借阅他人分享的图书，也可以分享自己的闲书。
+                        </p>  
                     </div>
 				</div>
                 <div class="content">
                     <h3 style="float:left;">随机推荐</h3>
-                    <a style="float:right;" href="#" class="unslider-arrow next button button-flat-primary button-tiny"> >> </a>
-                    <a style="float:right;" href="#" class="unslider-arrow prev button button-flat-primary button-tiny"> << </a>
+                    <a href="#" class="unslider-arrow next button button-flat-primary button-tiny floatright"> >> </a>
+                    <a href="#" class="unslider-arrow prev button button-flat-primary button-tiny floatright"> << </a>
                     <div class="banner">
                         <ul>
                         
@@ -55,6 +64,7 @@
                         <input type="checkbox" value="remember-me">记住我</input>
 					</label>
 					<button class="button glow button-rounded button-flat-primary" type="submit">登录</button>
+					<button class="button glow button-rounded button-flat-primary" type="submit">注册</button>
 				</form>
 			</div>
 		</div>

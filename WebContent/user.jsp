@@ -3,39 +3,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Drift Library</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" href="css/custom.css">
-	<link rel="stylesheet" href="css/custom.css">
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="js/addbook.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/unslider.min.js"></script>
-</head>
+<%@include file="head.jsp" %>
 <body>
 
     
-   <header class="navbar navbar-fixed-top navbar-inverse">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<nav>
-					<ul class="nav">
-						<li><a id="logo" href="#">Drift Library</a></li>
-					</ul>
-
-                    <form class="form-search header_search" action="#">
-                        <div class="input-append">
-                            <input class="span2 search-query" type="text" placeholder="你想要的图书" />
-                            <button class="btn">搜索</button>
-                        </div>
-                    </form>
-
-				</nav>
-			</div>
-		</div>
-	</header>
+   <%@include file="header.jsp" %>
     
     <div class="container">
         <div class="row">
