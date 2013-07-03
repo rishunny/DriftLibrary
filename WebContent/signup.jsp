@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <@include file="head">
+        <%@include file="head.jsp"%>
 
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/additional-methods.js"></script>
@@ -31,7 +31,7 @@
         <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
         <script src="js/bootstrap.min.js"></script>
 
-        <@include file="header.jsp">
+        <%@include file="header.jsp"%>
 
         <%
         String re = request.getParameter("flag");

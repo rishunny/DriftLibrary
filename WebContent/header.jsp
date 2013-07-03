@@ -6,7 +6,7 @@
 			<div class="container-fluid">
 				<nav>
 					<ul class="nav">
-						<li><a id="logo" href="#">Drift Library</a></li>
+						<li><a id="logo" href="main">Drift Library</a></li>
 					</ul>
 
                     <form class="form-search header_search" action="query" method="post">

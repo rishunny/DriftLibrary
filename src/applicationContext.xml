@@ -88,6 +88,9 @@
 	</property>
 	</bean>
 	<bean id="userInfoAction" class="com.team512.action.UserInfoAction">
+	<property name="bookDAO">
+	<ref bean="BookDAO"></ref>
+	</property>
 	</bean>
 	<bean id="borrowAction" class="com.team512.action.BorrowAction">
 	<property name="bookDAO">

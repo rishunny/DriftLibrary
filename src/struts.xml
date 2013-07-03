@@ -5,21 +5,20 @@
 <constant name="struts.objectFactory" value="spring"></constant>
 	<package name="com.team512.start" extends="struts-default">
 		<action name="loginAction" class="loginAction">
-		<result name="success" type="redirect">
-		/signup.jsp
+		<result name="success" type="redirectAction">
+		userInfo
 		</result>
-		<result name="error">/index.jsp</result>
+		<result name="error"  type="redirectAction">main</result>
 		</action>
 		
 		<action name="registerAction" class="registerAction">
 		<!-- <result type="json">
              <param name="root">result</param>
         </result> -->
-		<result name="success" type="redirect">
-		<param name="location">/index.jsp</param>
-		<param name="flag">1</param>
+		<result name="success" type="redirectAction">
+		main
 		</result>
-		<result name="error">/signup.jsp</result>
+		<result name="error" type="redirect">/signup.jsp?flag=1</result>
 		</action>
 		
 		<action name="randAction" class="randAction">

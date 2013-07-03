@@ -6,6 +6,8 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.team512.model.User;
 
 /**
@@ -36,9 +38,12 @@ public class UserDAO extends HibernateDaoSupport {
 	public int loginValidate(String mail,String pwd){
 		try {
 			String hqlString = "from User as U where U.email=? and U.passWord=?";
-			List list = getHibernateTemplate().find(hqlString,new String[]{mail,pwd});
-			if(list.size()>0)
+			List<User> list = getHibernateTemplate().find(hqlString,new String[]{mail,pwd});
+			if(list.size()>0){
+				User user = list.get(0);
+				ActionContext.getContext().getSession().put("user_id",user.getUserId());
 				return 0;
+			}
 			else return 1;
 		} catch (RuntimeException re) {
 			log.error("Login validate failde", re);

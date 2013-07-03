@@ -1,6 +1,7 @@
 package com.team512.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.soap.Detail;
@@ -68,6 +69,37 @@ public class BookDAO extends HibernateDaoSupport {
 	public int getAllRowCount(String hql) {
 		// TODO Auto-generated method stub
 		 return getHibernateTemplate().find(hql).size();
+	}
+	public List<Book> myBooks(int userId){
+		try {
+			String hql = "from Book as B where B.userId="+userId;
+			List list = getHibernateTemplate().find(hql);
+			return list;
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+	public List<Book> needBooks(int userId){
+		List<Book> list = new ArrayList<Book>();
+		try {
+			String hql = "from Need as N where N.userId="+userId;
+			List<Need> needs = getHibernateTemplate().find(hql);
+			
+			int n = needs.size();
+			for(int i = 0;i<n;i++){
+				Need need = needs.get(i);
+				String isbn = need.getIsbn();
+				String hqlString = "from Book as B where B.isbn='"+isbn+"'";
+				List<Book> temp = getHibernateTemplate().find(hqlString);
+				Book book = temp.get(0);
+				list.add(book);
+			}
+			return list;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list;
 	}
 	public int saveBook(Book transientInstance){
 		int i = 0;
