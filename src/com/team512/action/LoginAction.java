@@ -2,6 +2,7 @@ package com.team512.action;
 
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.team512.dao.UserDAO;
 
@@ -17,7 +18,11 @@ public class LoginAction extends ActionSupport {
 		int i = userDAO.loginValidate(this.email, this.password);
 		//List list = userDAO.findAll();
 		//int i = 0;
-		if(i==0) return "success";
+		if(i==0) {
+			int userid= (Integer)ActionContext.getContext().getSession().get("user_id");
+			System.out.println("userid:"+userid);
+			return "success";
+		}
 		else return "error";
 	}
 

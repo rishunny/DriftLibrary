@@ -106,9 +106,9 @@ public class AddBookAction extends ActionSupport{
 	public void addBook(){
 		
 		//String userId_str=(String)(ActionContext.getContext().getSession().get("user_id")); 
-		//int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
+		int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
 		System.out.println("begin");
-		int userId = 1;
+		//int userId = 1;
 		Book book = new Book();
 		book.setTitle(title);
 		book.setSubtitle(subtitle);
