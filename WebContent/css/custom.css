@@ -76,6 +76,10 @@ textarea{
     height: 140px;
 }
 
+.banner img, .banner1 img, .banner2 img, .banner3 img{
+    padding-right: 10px;
+}
+
 /*===========header=======*/
 
 .header_search{
@@ -123,13 +127,27 @@ textarea{
     width: 280px;
 }
 
-.banner img{
-    padding-right: 13px;
-}
 
 .img_logo{
-    width: 350px;
+    width: 300px;
     float: left; 
+    padding-right: 10px;
+}
+
+.index_about{
+    color: #484847;
+}
+
+.index_about h1{
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.index_about p{
+    font-family: "Hiragino Sans GB";
+    font-size: 14px;
+    padding-bottom: 4px;
 }
 
 /*=========bookinfo=========*/
@@ -283,6 +301,71 @@ textarea{
 }
 
 .book_list{
-    padding: 10px 20px 30px;
+    padding: 20px;
 }
 
+
+.book_list2 li{
+    border-bottom: 1px solid #BFC0C1;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    height: 60px;
+    width: 550px;
+}
+
+.book_list2 a{
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+}
+
+.book_list2 li img{
+    float: left;
+    width: 36px;
+    height: 50px;
+    padding-right: 15px;
+}
+
+.book_inventory{
+    font: #000000;
+    font-size: 12px;
+    position: relative;
+    top: 20px;
+    left: 150px;
+}
+
+.book_want{
+    position: relative;
+    top: 20px;
+    left: 180px;
+    
+}
+
+/*=====search=====*/
+
+.search_results{
+    /*height: 120px;*/
+}
+
+.search_results ul li img.img_cover{
+    width: 65px;
+    height: 95px;
+    float:left;
+    padding-right: 10px;
+}
+
+.search_results ul li a.book_name{
+    font-size: 14px;
+}
+
+.search_results ul li p{
+    color: #A5A5A5;
+    margin-bottom: 10px;
+}
+
+.search_results ul li div.book_info{
+}    

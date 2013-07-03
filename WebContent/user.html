@@ -40,7 +40,7 @@
         });
 
     </script>
-    
+
     <header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -48,15 +48,19 @@
 					<ul class="nav">
 						<li><a id="logo" href="#">Drift Library</a></li>
 					</ul>
-					<ul class="nav pull-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
+
+                    <form class="form-search header_search" action="#">
+                        <div class="input-append">
+                            <input class="span2 search-query" type="text" placeholder="你想要的图书" />
+                            <button class="btn">搜索</button>
+                        </div>
+                    </form>
+
 				</nav>
 			</div>
 		</div>
 	</header>
-
+    
     <div class="container">
         <div class="row">
             <div class="span8">
@@ -70,9 +74,9 @@
                     <div>
                         <div class="book_list">
                             <h3 class="floatleft">我想借的</h3>
-                            <a href="#" class="unslider-arrow next button button-flat-primary button-tiny floatright"> >> </a>
-                            <a href="#" class="unslider-arrow prev button button-flat-primary button-tiny floatright"> << </a>
-                            <div class="banner">
+                            <a href="#" class="unslider1-arrow next button button-flat-primary button-tiny floatright"> >> </a>
+                            <a href="#" class="unslider1-arrow prev button button-flat-primary button-tiny floatright"> << </a>
+                            <div class="banner1">
                                 <ul>
                                     <li>
                                         <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
@@ -92,10 +96,50 @@
                             </div>
                         </div> 
                         <div class="book_list">
-                            <h3>我已借的</h3>
+                            <h3 class="floatleft">我已借的</h3>
+                            <a href="#" class="unslider2-arrow next button button-flat-primary button-tiny floatright"> >> </a>
+                            <a href="#" class="unslider2-arrow prev button button-flat-primary button-tiny floatright"> << </a>
+                            <div class="banner2">
+                                <ul>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                </ul>
+                            </div>
                         </div> 
                         <div class="book_list">
-                            <h3>我可借的</h3>
+                            <h3 class="floatleft">我可借的</h3>
+                            <a href="#" class="unslider3-arrow next button button-flat-primary button-tiny floatright"> >> </a>
+                            <a href="#" class="unslider3-arrow prev button button-flat-primary button-tiny floatright"> << </a>
+                            <div class="banner3">
+                                <ul>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                    <li>
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
+                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
+                                    </li>
+                                </ul>
+                            </div>
                         </div> 
                     </div>
                 </div>
@@ -133,13 +177,23 @@
     </div>
 
     <script type="text/javascript">
-        var unslider = $('.banner').unslider();
-
-        $('.unslider-arrow').click(function() {
+        var unslider1 = $('.banner1').unslider();
+        $('.unslider1-arrow').click(function() {
             var fn = this.className.split(' ')[1];
-
             //  Either do unslider.data('unslider').next() or .prev() depending on the className
-            unslider.data('unslider')[fn]();
+            unslider1.data('unslider')[fn]();
+        });
+        var unslider2 = $('.banner2').unslider();
+        $('.unslider2-arrow').click(function() {
+            var fn = this.className.split(' ')[1];
+            //  Either do unslider.data('unslider').next() or .prev() depending on the className
+            unslider2.data('unslider')[fn]();
+        });
+        var unslider3 = $('.banner3').unslider();
+        $('.unslider3-arrow').click(function() {
+            var fn = this.className.split(' ')[1];
+            //  Either do unslider.data('unslider').next() or .prev() depending on the className
+            unslider3.data('unslider')[fn]();
         });
     </script>
 
