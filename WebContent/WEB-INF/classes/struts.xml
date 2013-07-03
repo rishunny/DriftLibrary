@@ -46,7 +46,10 @@
 		<action name="main" class="randomBook">
 		<result name="success">/index.jsp</result>
 		</action>
-		<action name="user" class="user">
+		<action name="userInfo" class="userInfoAction">
 		<result name="success">/user.jsp</result>
+		</action>
+		<action name="borrowAction" class="borrowAction">
+		<result name="success">/book.jsp</result>
 		</action>
 	</package></struts>    
