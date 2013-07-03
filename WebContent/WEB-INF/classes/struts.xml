@@ -36,7 +36,7 @@
 		<result name="success">/success.jsp</result>
 		</action>
 		<action name="query" class='query'>
-		<result name="success">/success2.jsp</result>
+		<result name="success">/search.jsp</result>
 		</action>
 		<action name="addBook" class="addBook">
 		</action>

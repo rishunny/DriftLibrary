@@ -27,6 +27,7 @@
                     <a style="float:right;" href="#" class="unslider-arrow prev button button-flat-primary button-tiny"> << </a>
                     <div class="banner">
                         <ul>
+                        
                         <s:iterator value="%{list }" id="item" status="count">
                         <s:if test="#count.index%5==1">
                         <li>
