@@ -87,7 +87,7 @@
 	            </div>
 	        </div>
 	
-	        <div class="span2">
+	        <div class="span4">
 	            <div> 
 	                <div class="content book_info_box">
 	                    <h3 class="mb5">其它信息</h3>
@@ -115,5 +115,22 @@
 	        </div>
 	    </div>
 	  </div>
+	  
+	 <script type="text/javascript">
+        borrow_btn = document.getElementById("borrow_btn");
+        lend_btn = document.getElementById("lend_btn");
 
+        function pressWish(){
+            btn = document.getElementById("borrow_btn");
+            btn.className = "button button-rounded button-flat"; 
+        }
+
+        function pressDonate(){
+            btn = document.getElementById("lend_btn");
+            btn.className = "button button-rounded button-flat"; 
+        }
+        borrow_btn.addEventListener("click", pressWish);
+        lend_btn.addEventListener("click", pressDonate);
+    </script>
+    
 </body>
