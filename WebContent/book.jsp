@@ -12,14 +12,42 @@
 <body>
 
     <script type="text/javascript"> 
-       /*  $.getJSON('https://api.douban.com/v2/book/2567698?apikey=05fda08443dc365f11f8e18ccb94a31d&callback=?', function(data) {
-            document.getElementById("bookBox_cover").src = data.image;
-            document.getElementById("bookBox_info_title").innerHTML = data.title;
-            var str = data.summary; 
-            str = "<p>" +str + "</p>";
-            str = str.replace(/\n/g, "</p>\n<p>");
-            document.getElementById("summary").innerHTML = str; 
-        }); */
+    $(document).ready(function(){
+    $("#borrow_btn").click(function(){
+    var isbn_input = $("#borrow_btn").attr("isbn");
+    $.post("borrowAction",{isbn:isbn_input},function(result){
+    });
+    });
+    $("#lend_btn").click(function(){
+    var isbn_input = $("#lend_btn").attr("isbn");
+    var url = "https://api.douban.com/v2/book/isbn/"+isbn_input+"?apikey=05fda08443dc365f11f8e18ccb94a31d&callback=?";
+    $.getJSON(url, function(data) {
+            var tags=data.tags;
+            var tags_str=JSON.stringify(tags);
+            var title_str = data.title;
+            var subtitle_str = data.subtitle;
+            var author_str = data.author[0];
+            var image_str = data.image;
+            var authorIntro_str = data.author_intro;
+            var summary_str = data.summary;
+            summary_str = "<p>" +summary_str + "</p>";
+            summary_str = summary_str.replace(/\n/g, "</p>\n<p>");
+            var publisher_str = data.publisher;
+            var pubdate_str = data.pubdate;;
+            var isbn_str=isbn_input;
+            var url_str=data.alt;
+            $.post("addBook",{tag:tags_str,title:title_str,subtitle:subtitle_str,author:author_str,image:image_str,authorIntro:authorIntro_str,summary:summary_str
+            ,publisher:publisher_str,pubdate:pubdate_str,isbn:isbn_str,url:url_str},function(result){
+            	if(result=="success"){
+            		location.reload();
+            	}
+            	if(result=="repeat"){
+            		alert('repeat');
+            	}
+            });
+    });
+        });
+    });
     </script>
     
 	<header class="navbar navbar-fixed-top navbar-inverse">
@@ -71,8 +99,8 @@
                     </div>
 
                     <div class="book_activity">
-                        <button class="btn btn-primary">想借</button>
-                        <button class="btn btn-primary">捐赠</button>
+                        <button class="btn btn-primary" id="borrow_btn" isbn="${book.isbn }">想借</button>
+                        <button class="btn btn-primary" id="lend_btn" isbn="${book.isbn }">捐赠</button>
                     </div>
 
                 </div>

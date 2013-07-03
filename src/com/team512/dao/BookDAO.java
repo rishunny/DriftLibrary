@@ -18,6 +18,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.team512.model.Book;
+import com.team512.model.Need;
 import com.team512.model.Tags;
 
 /**
@@ -143,6 +144,17 @@ public class BookDAO extends HibernateDaoSupport {
 			String hql = "from Book as B where B.bookId="+bookId;
 			List<Book> list = getHibernateTemplate().find(hql);
 			return list;
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+	public void saveNeed(Need instance){
+		System.out.println("in");
+		log.debug("saving Book instance");
+		try {
+			getHibernateTemplate().save(instance);
+			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
 			throw re;
