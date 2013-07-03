@@ -2,6 +2,7 @@ package com.team512.action;
 
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.team512.dao.BookDAO;
 import com.team512.model.Book;
@@ -12,6 +13,20 @@ public class UserInfoAction extends ActionSupport {
 	private BookDAO bookDAO;
 	private List<Book> needlist;
 	private List<Book> ownList;
+	private int bookNum;
+	private int borrowedNum;
+	public int getBookNum() {
+		return bookNum;
+	}
+	public void setBookNum(int bookNum) {
+		this.bookNum = bookNum;
+	}
+	public int getBorrowedNum() {
+		return borrowedNum;
+	}
+	public void setBorrowedNum(int borrowedNum) {
+		this.borrowedNum = borrowedNum;
+	}
 	public List<Book> getNeedlist() {
 		return needlist;
 	}
@@ -33,9 +48,10 @@ public class UserInfoAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		int userId = 1;
+		int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
+		bookNum=bookDAO.count_books(1);
 		needlist = bookDAO.needBooks(userId);
-		ownList = bookDAO.myBooks(userId);
+		ownList = bookDAO.myBooks(1);
 		return "success";
 	}
 	

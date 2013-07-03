@@ -95,23 +95,11 @@
                        				 </li>
                        			 </s:if>
                        			 <s:else>
+                       			 abc
                         		<a href="bookDetail?bookId=${item.getBookId()}"><img class="img_cover" src="${item.getImage() }" alt="${item.getTitle() }" /></a>
                        			 </s:else>
                         		</s:iterator>
-                                    <!-- <li>
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
-                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
-                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
-                                    </li>
-                                    <li>
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s6971618.jpg" alt="book1" />
-                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
-                                        <img class="img_cover" src="http://img4.douban.com/lpic/s7647218.jpg" alt="book2" />
-                                        <img class="img_cover" src="http://img3.douban.com/lpic/s24927725.jpg" alt="book3" />
-                                    </li> -->
+                                    
                                 </ul>
                             </div>
                         </div> 
@@ -129,11 +117,11 @@
                     
                     <div class="userBox_count">
                         <span>
-                            <label id="count_donate">0</label>
+                            <label id="count_donate">${bookNum}</label>
                             捐赠
                         </span>
                         <span>
-                            <label id="count_borrow">0</label>
+                            <label id="count_borrow">${borrowedNum }</label>
                             借入
                         </span>
                     </div>

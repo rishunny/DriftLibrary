@@ -2,6 +2,7 @@ package com.team512.action;
 
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.team512.dao.BookDAO;
 import com.team512.model.Book;
@@ -26,9 +27,7 @@ public class BorrowAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("first");
-		int userId = 1;
-		System.out.println("isbn is "+isbn);
+		int userId = (Integer) ActionContext.getContext().getSession().get("user_id");
 		Need need = new Need();
 		need.setUserId(userId);
 		need.setIsbn(isbn);

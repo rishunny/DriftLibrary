@@ -70,6 +70,16 @@ public class BookDAO extends HibernateDaoSupport {
 		// TODO Auto-generated method stub
 		 return getHibernateTemplate().find(hql).size();
 	}
+	public int count_books(int userId){
+		try {
+			String hql = "from Book as B where B.userId="+userId;
+			List list = getHibernateTemplate().find(hql);
+			return list.size();
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
 	public List<Book> myBooks(int userId){
 		try {
 			String hql = "from Book as B where B.userId="+userId;

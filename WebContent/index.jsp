@@ -64,7 +64,7 @@
                         <input type="checkbox" value="remember-me">记住我</input>
 					</label>
 					<button class="button glow button-rounded button-flat-primary" type="submit">登录</button>
-					<button class="button glow button-rounded button-flat-primary" type="submit">注册</button>
+					<a href="signup.jsp"><button class="button glow button-rounded button-flat-primary" type="button">注册</button></a>
 				</form>
 			</div>
 		</div>

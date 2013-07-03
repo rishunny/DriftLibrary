@@ -4,8 +4,9 @@
 
 <!DOCTYPE html>
 <html>
+<%@include file="head.jsp"%>
     <head>
-        <%@include file="head.jsp"%>
+        
 
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/additional-methods.js"></script>
@@ -74,13 +75,13 @@
 
                 <br />
                 
-                <s:text name="random"></s:text>
-                <s:textfield name="rand" id="rand" size="5"></s:textfield>
                 <img src="randAction" onclick="changeValidateCode(this)" title="点击图片刷新验证码"/>
-                <input id="auth_code" type="text" name="auth_code" />
+                <label for="user_password">验证码</label>
+                <s:textfield name="rand" id="rand" size="5"></s:textfield>
+<!--                 <input id="auth_code" type="text" name="auth_code" /> -->
                 
                 <br />
-                <input class="btn btn-large btn-primary" type="submit" name="commit" value="提交" />
+                <input class="button glow button-rounded button-flat-primary" type="submit" name="commit" value="提交" />
 
             </form>
         </div>

@@ -32,7 +32,6 @@ public class BookDetail extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("id:"+bookId);
 		List<Book> list = bookDAO.detail(bookId);
 		book = list.get(0);
 		return super.execute();
