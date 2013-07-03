@@ -80,6 +80,10 @@ textarea{
     padding-right: 10px;
 }
 
+.book_list{
+    height: 150px;
+}
+
 /*===========header=======*/
 
 .header_search{
